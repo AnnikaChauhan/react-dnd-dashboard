@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import GridLayout from "react-grid-layout";
 import { Card, Switch, Paper } from "@material-ui/core";
+import useStyles from "./styles";
 
 const App = () => {
+  const classes = useStyles();
   const [draggable, setDraggable] = useState(true);
 
   const layout = [
@@ -42,9 +44,15 @@ const App = () => {
           isDraggable={draggable}
           // onLayoutChange={() => console.log("layout has changed")}
         >
-          <Card key="a">Card A</Card>
-          <Card key="b">Card B</Card>
-          <Card key="c">Card C</Card>
+          <Card className={classes.container} key="a">
+            Card A
+          </Card>
+          <Card className={classes.container} key="b">
+            Card B
+          </Card>
+          <Card className={classes.container} key="c">
+            Card C
+          </Card>
         </GridLayout>
       </Paper>
     </div>
