@@ -1,5 +1,14 @@
 import React, { useState } from "react";
-import { Card, Switch, Paper } from "@material-ui/core";
+import {
+  Card,
+  Switch,
+  Paper,
+  Radio,
+  RadioGroup,
+  FormControl,
+  FormControlLabel,
+  FormLabel,
+} from "@material-ui/core";
 import useStyles from "./styles";
 import RGL, { WidthProvider } from "react-grid-layout";
 import AspectRatioIcon from "@material-ui/icons/AspectRatio";
@@ -10,6 +19,7 @@ const App = () => {
   const classes = useStyles();
   const [draggable, setDraggable] = useState(true);
   const [resizable, setResizable] = useState(true);
+  const [compactType, setCompactType] = useState("vertical");
 
   const layout = [
     { i: "a", x: 0, y: 0, w: 1, h: 2 },
@@ -22,6 +32,8 @@ const App = () => {
   const handleDraggableChange = (event) => setDraggable(event.target.checked);
 
   const handleResizableChange = (event) => setResizable(event.target.checked);
+
+  const handleCompactTypeChange = (event) => setCompactType(event.target.value);
 
   return (
     <div style={{ margin: "0 10px" }}>
@@ -47,6 +59,33 @@ const App = () => {
             inputProps={{ "aria-label": "primary checkbox" }}
           />
         </p>
+        <p>
+          <FormControl component="fieldset">
+            <FormLabel component="legend">Compact Type</FormLabel>
+            <RadioGroup
+              aria-label="gender"
+              name="gender1"
+              value={compactType}
+              onChange={handleCompactTypeChange}
+            >
+              <FormControlLabel
+                value="vertical"
+                control={<Radio />}
+                label="Vertical"
+              />
+              <FormControlLabel
+                value="horizontal"
+                control={<Radio />}
+                label="Horizontal"
+              />
+              <FormControlLabel
+                value="nocompaction"
+                control={<Radio />}
+                label="No Compaction"
+              />
+            </RadioGroup>
+          </FormControl>
+        </p>
       </div>
       <Paper style={{ height: "500px" }}>
         <ReactGridLayout
@@ -61,6 +100,7 @@ const App = () => {
           isResizable={resizable}
           resizeHandles={["se"]}
           resizeHandle={() => <AspectRatioIcon />}
+          compactType={compactType}
           // onLayoutChange={() => console.log("layout has changed")}
         >
           <Card className={classes.container} key="a">
