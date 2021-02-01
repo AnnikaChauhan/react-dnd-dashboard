@@ -5,7 +5,6 @@ import {
   Tooltip,
 } from "@material-ui/core";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
-import { Heading } from "@novafuturltd/web-core/typography/heading";
 import React from "react";
 
 const useStyles = makeStyles(() =>
@@ -78,11 +77,7 @@ export const ContainerWithFooter = ({
   return (
     <div className={classes.containerWithFooter} id={id}>
       <div className={classes.innerContainer}>
-        <div className={classes.containerWithFooterHeader}>
-          <Heading variant="h4" fontWeight="normal">
-            {heading}
-          </Heading>
-        </div>
+        <div className={classes.containerWithFooterHeader}>{heading}</div>
         {children}
       </div>
       <div className={classes.footerContainer}>
