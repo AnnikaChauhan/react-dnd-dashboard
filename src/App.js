@@ -1,16 +1,21 @@
 import React, { useState } from "react";
-import GridLayout from "react-grid-layout";
 import { Card, Switch, Paper } from "@material-ui/core";
 import useStyles from "./styles";
+import RGL, { WidthProvider } from "react-grid-layout";
+// import AspectRatioIcon from "@material-ui/icons/AspectRatio";
+
+const ReactGridLayout = WidthProvider(RGL);
 
 const App = () => {
   const classes = useStyles();
   const [draggable, setDraggable] = useState(true);
 
   const layout = [
-    { i: "a", x: 0, y: 0, w: 1, h: 2, static: true, isResizable: true },
+    { i: "a", x: 0, y: 0, w: 1, h: 2 },
     { i: "b", x: 1, y: 0, w: 3, h: 2, minW: 2, maxW: 4 },
     { i: "c", x: 4, y: 0, w: 1, h: 2 },
+    { i: "d", x: 1, y: 1, w: 2, h: 3 },
+    { i: "e", x: 2, y: 1, w: 2, h: 2 },
   ];
 
   const handleChange = (event) => {
@@ -33,7 +38,7 @@ const App = () => {
         </p>
       </div>
       <Paper style={{ height: "500px" }}>
-        <GridLayout
+        <ReactGridLayout
           layout={layout}
           cols={12}
           rowHeight={30}
@@ -42,6 +47,7 @@ const App = () => {
           containerPadding={[10, 10]}
           className="layout"
           isDraggable={draggable}
+          // resizeHandle={() => <AspectRatioIcon />}
           // onLayoutChange={() => console.log("layout has changed")}
         >
           <Card className={classes.container} key="a">
@@ -53,7 +59,13 @@ const App = () => {
           <Card className={classes.container} key="c">
             Card C
           </Card>
-        </GridLayout>
+          <Card className={classes.container} key="d">
+            Card D
+          </Card>
+          <Card className={classes.container} key="e">
+            Card E
+          </Card>
+        </ReactGridLayout>
       </Paper>
     </div>
   );
