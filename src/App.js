@@ -2,13 +2,14 @@ import React, { useState } from "react";
 import { Card, Switch, Paper } from "@material-ui/core";
 import useStyles from "./styles";
 import RGL, { WidthProvider } from "react-grid-layout";
-// import AspectRatioIcon from "@material-ui/icons/AspectRatio";
+import AspectRatioIcon from "@material-ui/icons/AspectRatio";
 
 const ReactGridLayout = WidthProvider(RGL);
 
 const App = () => {
   const classes = useStyles();
   const [draggable, setDraggable] = useState(true);
+  const [resizable, setResizable] = useState(true);
 
   const layout = [
     { i: "a", x: 0, y: 0, w: 1, h: 2 },
@@ -18,9 +19,9 @@ const App = () => {
     { i: "e", x: 2, y: 1, w: 2, h: 2 },
   ];
 
-  const handleChange = (event) => {
-    setDraggable(event.target.checked);
-  };
+  const handleDraggableChange = (event) => setDraggable(event.target.checked);
+
+  const handleResizableChange = (event) => setResizable(event.target.checked);
 
   return (
     <div style={{ margin: "0 10px" }}>
@@ -30,9 +31,19 @@ const App = () => {
           Draggable:{" "}
           <Switch
             checked={draggable}
-            onChange={handleChange}
+            onChange={handleDraggableChange}
             color="primary"
-            name="checkedB"
+            name="checkedDrag"
+            inputProps={{ "aria-label": "primary checkbox" }}
+          />
+        </p>
+        <p>
+          Resizable:{" "}
+          <Switch
+            checked={resizable}
+            onChange={handleResizableChange}
+            color="primary"
+            name="checkedResize"
             inputProps={{ "aria-label": "primary checkbox" }}
           />
         </p>
@@ -47,7 +58,9 @@ const App = () => {
           containerPadding={[10, 10]}
           className="layout"
           isDraggable={draggable}
-          // resizeHandle={() => <AspectRatioIcon />}
+          isResizable={resizable}
+          resizeHandles={["se"]}
+          resizeHandle={() => <AspectRatioIcon />}
           // onLayoutChange={() => console.log("layout has changed")}
         >
           <Card className={classes.container} key="a">
