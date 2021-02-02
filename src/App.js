@@ -30,7 +30,7 @@ const App = () => {
           compactType={compactType}
         />
       </Paper>
-      <div>
+      <div style={{ display: "flex", justifyContent: "space-evenly" }}>
         <p>
           Draggable:{" "}
           <Switch
