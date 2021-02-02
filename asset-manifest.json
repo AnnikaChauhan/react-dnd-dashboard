@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/react-dnd-dashboard/static/css/main.37b293fd.chunk.css",
-    "main.js": "/react-dnd-dashboard/static/js/main.af7846e4.chunk.js",
-    "main.js.map": "/react-dnd-dashboard/static/js/main.af7846e4.chunk.js.map",
+    "main.js": "/react-dnd-dashboard/static/js/main.98bb0840.chunk.js",
+    "main.js.map": "/react-dnd-dashboard/static/js/main.98bb0840.chunk.js.map",
     "runtime-main.js": "/react-dnd-dashboard/static/js/runtime-main.37af4962.js",
     "runtime-main.js.map": "/react-dnd-dashboard/static/js/runtime-main.37af4962.js.map",
     "static/js/2.60aaac52.chunk.js": "/react-dnd-dashboard/static/js/2.60aaac52.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.37af4962.js",
     "static/js/2.60aaac52.chunk.js",
     "static/css/main.37b293fd.chunk.css",
-    "static/js/main.af7846e4.chunk.js"
+    "static/js/main.98bb0840.chunk.js"
   ]
 }
