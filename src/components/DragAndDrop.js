@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Card } from "@material-ui/core";
-import useStyles from "./styles";
+import useStyles from "../styles";
 import RGL, { WidthProvider } from "react-grid-layout";
 import AspectRatioIcon from "@material-ui/icons/AspectRatio";
 
