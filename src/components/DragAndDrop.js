@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { Card } from "@material-ui/core";
 import useStyles from "../styles";
 import RGL, { WidthProvider } from "react-grid-layout";
-import AspectRatioIcon from "@material-ui/icons/AspectRatio";
+// import AspectRatioIcon from "@material-ui/icons/AspectRatio";
+import "react-grid-layout/css/styles.css";
 
 const ReactGridLayout = WidthProvider(RGL);
 
@@ -27,9 +28,9 @@ const DragAndDrop = ({ draggable, resizable, compactType }) => {
       containerPadding={[10, 10]}
       className="layout"
       isDraggable={draggable}
-      isResizable={resizable}
-      resizeHandles={["se"]}
-      resizeHandle={() => <AspectRatioIcon />}
+      // isResizable={resizable}
+      // resizeHandles={["se"]}
+      // resizeHandle={() => <AspectRatioIcon />}
       compactType={compactType}
       // onLayoutChange={() => console.log("layout has changed")}
     >

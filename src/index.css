@@ -34,7 +34,7 @@ code {
 }
 
 .react-grid-item.react-grid-placeholder {
-  /* background: #000; */
+  background: #000;
   opacity: 0.1;
   transition-duration: 100ms;
   z-index: 2;
