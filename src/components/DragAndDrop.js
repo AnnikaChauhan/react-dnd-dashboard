@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Card } from "@material-ui/core";
 import useStyles from "../styles";
 import RGL, { WidthProvider } from "react-grid-layout";
@@ -28,8 +28,9 @@ const DragAndDrop = ({ draggable, resizable, compactType }) => {
       containerPadding={[10, 10]}
       className="layout"
       isDraggable={draggable}
-      // isResizable={resizable}
-      // resizeHandles={["se"]}
+      isResizable={resizable}
+      // This can be taylored to an array of positions so that the user can resize in any direction or only specific ones e.g. [se,e,ne]
+      resizeHandles={["se"]}
       // resizeHandle={() => <AspectRatioIcon />}
       compactType={compactType}
       // onLayoutChange={() => console.log("layout has changed")}
