@@ -1,8 +1,9 @@
-import React from "react";
-import { Card } from "@material-ui/core";
+import React, { useState } from "react";
+import { Card, CardContent, Typography, IconButton } from "@material-ui/core";
+import DeleteIcon from "@material-ui/icons/Delete";
 import useStyles from "../styles";
 import { WidthProvider, Responsive } from "react-grid-layout";
-import { cards } from "./cards";
+import { cards as initialCards } from "./cards";
 // import AspectRatioIcon from "@material-ui/icons/AspectRatio";
 // import "react-grid-layout/css/styles.css";
 
@@ -10,29 +11,30 @@ const ReactGridLayout = WidthProvider(Responsive);
 
 const DragAndDrop = ({ draggable, resizable, compactType }) => {
   const classes = useStyles();
+  const [cards, setCards] = useState(initialCards);
 
   const layoutLG = [
-    { i: "a", x: 0, y: 0, w: 4, h: 2 },
-    { i: "b", x: 3, y: 0, w: 3, h: 2, minW: 2, maxW: 4 },
-    { i: "c", x: 6, y: 0, w: 1, h: 4 },
-    { i: "d", x: 5, y: 1, w: 2, h: 3 },
-    { i: "e", x: 1, y: 4, w: 4, h: 5, minW: 4, maxW: 6, minH: 5, maxH: 7 },
+    { i: "one", x: 0, y: 0, w: 4, h: 3 },
+    { i: "two", x: 3, y: 0, w: 3, h: 3, minW: 2, maxW: 4 },
+    { i: "three", x: 6, y: 0, w: 2, h: 4 },
+    { i: "four", x: 5, y: 1, w: 2, h: 3 },
+    { i: "five", x: 1, y: 4, w: 4, h: 5, minW: 4, maxW: 6, minH: 5, maxH: 7 },
   ];
 
   const layoutMD = [
-    { i: "a", x: 0, y: 0, w: 1, h: 2 },
-    { i: "b", x: 1, y: 0, w: 3, h: 2, minW: 2, maxW: 4 },
-    { i: "c", x: 4, y: 0, w: 1, h: 2 },
-    { i: "d", x: 1, y: 1, w: 2, h: 3 },
-    { i: "e", x: 2, y: 1, w: 2, h: 2 },
+    { i: "one", x: 0, y: 0, w: 1, h: 2 },
+    { i: "two", x: 1, y: 0, w: 3, h: 2, minW: 2, maxW: 4 },
+    { i: "three", x: 4, y: 0, w: 1, h: 2 },
+    { i: "four", x: 1, y: 1, w: 2, h: 3 },
+    { i: "five", x: 2, y: 1, w: 2, h: 2 },
   ];
 
   const layoutSM = [
-    { i: "a", x: 0, y: 0, w: 1, h: 2 },
-    { i: "b", x: 0, y: 0, w: 3, h: 2, minW: 2, maxW: 4 },
-    { i: "c", x: 0, y: 0, w: 1, h: 2 },
-    { i: "d", x: 0, y: 0, w: 2, h: 3 },
-    { i: "e", x: 0, y: 0, w: 2, h: 2 },
+    { i: "one", x: 0, y: 0, w: 1, h: 2 },
+    { i: "two", x: 0, y: 0, w: 3, h: 2, minW: 2, maxW: 4 },
+    { i: "three", x: 0, y: 0, w: 1, h: 2 },
+    { i: "four", x: 0, y: 0, w: 2, h: 3 },
+    { i: "five", x: 0, y: 0, w: 2, h: 2 },
   ];
 
   const responsiveLayouts = {
@@ -41,6 +43,10 @@ const DragAndDrop = ({ draggable, resizable, compactType }) => {
     sm: layoutSM,
     xs: layoutSM,
     xxs: layoutSM,
+  };
+
+  const removeCard = (cardToRemove) => () => {
+    setCards(cards.filter((card) => card.key !== cardToRemove));
   };
 
   return (
@@ -64,7 +70,17 @@ const DragAndDrop = ({ draggable, resizable, compactType }) => {
       {cards.map((card) => {
         return (
           <Card className={classes.container} key={card.key}>
-            {card.name}
+            <CardContent className={classes.content}>
+              <div className={classes.header}>
+                <Typography variant="h5">{card.name}</Typography>
+                <IconButton onClick={removeCard(card.key)}>
+                  <DeleteIcon />
+                </IconButton>
+              </div>
+              <div>
+                <Typography variant="body2">{card.description}</Typography>
+              </div>
+            </CardContent>
           </Card>
         );
       })}

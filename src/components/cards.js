@@ -1,27 +1,27 @@
 export const cards = [
   {
-    key: "a",
-    name: "Card A",
-    description: "This is a card",
+    key: "one",
+    name: "Card One",
+    description: "This is the section for card content.",
   },
   {
-    key: "b",
-    name: "Card B",
-    description: "This is a card",
+    key: "two",
+    name: "Card Two",
+    description: "This is the section for card content.",
   },
   {
-    key: "c",
-    name: "Card C",
-    description: "This is a card",
+    key: "three",
+    name: "Card Three",
+    description: "This is the section for card content.",
   },
   {
-    key: "d",
-    name: "Card D",
-    description: "This is a card",
+    key: "four",
+    name: "Card Four",
+    description: "This is the section for card content.",
   },
   {
-    key: "e",
-    name: "Card E",
-    description: "This is a card",
+    key: "five",
+    name: "Card Five",
+    description: "This is the section for card content.",
   },
 ];

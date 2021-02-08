@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Paper } from "@material-ui/core";
+import { Paper, IconButton, Tooltip } from "@material-ui/core";
+import AddIcon from "@material-ui/icons/Add";
 import DragAndDrop from "./DragAndDrop";
 import Tools from "./Tools";
 
@@ -16,7 +17,22 @@ const Dashboard = () => {
 
   return (
     <>
-      <h1>Drag and Drop Dashboard</h1>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+        }}
+      >
+        <h1>Drag and Drop Dashboard</h1>
+        <div>
+          {/* <Tooltip title="Add a widget">
+            <IconButton onClick={() => {}}>
+              <AddIcon />
+            </IconButton>
+          </Tooltip> */}
+        </div>
+      </div>
       <Tools
         draggable={draggable}
         resizable={resizable}
