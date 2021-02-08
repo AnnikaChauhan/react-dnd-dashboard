@@ -2,6 +2,7 @@ import React from "react";
 import { Card } from "@material-ui/core";
 import useStyles from "../styles";
 import { WidthProvider, Responsive } from "react-grid-layout";
+import { cards } from "./cards";
 // import AspectRatioIcon from "@material-ui/icons/AspectRatio";
 // import "react-grid-layout/css/styles.css";
 
@@ -60,21 +61,13 @@ const DragAndDrop = ({ draggable, resizable, compactType }) => {
       compactType={compactType}
       // onLayoutChange={() => console.log("layout has changed")}
     >
-      <Card className={classes.container} key="a">
-        Card A
-      </Card>
-      <Card className={classes.container} key="b">
-        Card B
-      </Card>
-      <Card className={classes.container} key="c">
-        Card C
-      </Card>
-      <Card className={classes.container} key="d">
-        Card D
-      </Card>
-      <Card className={classes.container} key="e">
-        Card E
-      </Card>
+      {cards.map((card) => {
+        return (
+          <Card className={classes.container} key={card.key}>
+            {card.name}
+          </Card>
+        );
+      })}
     </ReactGridLayout>
   );
 };
