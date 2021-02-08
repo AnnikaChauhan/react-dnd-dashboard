@@ -1,25 +1,22 @@
 {
   "files": {
-    "main.css": "/react-dnd-dashboard/static/css/main.bdf2cc17.chunk.css",
-    "main.js": "/react-dnd-dashboard/static/js/main.622de8d4.chunk.js",
-    "main.js.map": "/react-dnd-dashboard/static/js/main.622de8d4.chunk.js.map",
-    "runtime-main.js": "/react-dnd-dashboard/static/js/runtime-main.9d949779.js",
-    "runtime-main.js.map": "/react-dnd-dashboard/static/js/runtime-main.9d949779.js.map",
-    "static/css/2.8a4e8fbd.chunk.css": "/react-dnd-dashboard/static/css/2.8a4e8fbd.chunk.css",
-    "static/js/2.b638fef2.chunk.js": "/react-dnd-dashboard/static/js/2.b638fef2.chunk.js",
-    "static/js/2.b638fef2.chunk.js.map": "/react-dnd-dashboard/static/js/2.b638fef2.chunk.js.map",
-    "static/js/3.ae046b7f.chunk.js": "/react-dnd-dashboard/static/js/3.ae046b7f.chunk.js",
-    "static/js/3.ae046b7f.chunk.js.map": "/react-dnd-dashboard/static/js/3.ae046b7f.chunk.js.map",
+    "main.css": "/react-dnd-dashboard/static/css/main.a3ad6a63.chunk.css",
+    "main.js": "/react-dnd-dashboard/static/js/main.151f41a6.chunk.js",
+    "main.js.map": "/react-dnd-dashboard/static/js/main.151f41a6.chunk.js.map",
+    "runtime-main.js": "/react-dnd-dashboard/static/js/runtime-main.7648f38b.js",
+    "runtime-main.js.map": "/react-dnd-dashboard/static/js/runtime-main.7648f38b.js.map",
+    "static/js/2.05bb13f9.chunk.js": "/react-dnd-dashboard/static/js/2.05bb13f9.chunk.js",
+    "static/js/2.05bb13f9.chunk.js.map": "/react-dnd-dashboard/static/js/2.05bb13f9.chunk.js.map",
+    "static/js/3.4d85fbb7.chunk.js": "/react-dnd-dashboard/static/js/3.4d85fbb7.chunk.js",
+    "static/js/3.4d85fbb7.chunk.js.map": "/react-dnd-dashboard/static/js/3.4d85fbb7.chunk.js.map",
     "index.html": "/react-dnd-dashboard/index.html",
-    "static/css/2.8a4e8fbd.chunk.css.map": "/react-dnd-dashboard/static/css/2.8a4e8fbd.chunk.css.map",
-    "static/css/main.bdf2cc17.chunk.css.map": "/react-dnd-dashboard/static/css/main.bdf2cc17.chunk.css.map",
-    "static/js/2.b638fef2.chunk.js.LICENSE.txt": "/react-dnd-dashboard/static/js/2.b638fef2.chunk.js.LICENSE.txt"
+    "static/css/main.a3ad6a63.chunk.css.map": "/react-dnd-dashboard/static/css/main.a3ad6a63.chunk.css.map",
+    "static/js/2.05bb13f9.chunk.js.LICENSE.txt": "/react-dnd-dashboard/static/js/2.05bb13f9.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.9d949779.js",
-    "static/css/2.8a4e8fbd.chunk.css",
-    "static/js/2.b638fef2.chunk.js",
-    "static/css/main.bdf2cc17.chunk.css",
-    "static/js/main.622de8d4.chunk.js"
+    "static/js/runtime-main.7648f38b.js",
+    "static/js/2.05bb13f9.chunk.js",
+    "static/css/main.a3ad6a63.chunk.css",
+    "static/js/main.151f41a6.chunk.js"
   ]
 }
