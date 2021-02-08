@@ -16,6 +16,7 @@ const Dashboard = () => {
 
   return (
     <>
+      <h1>Drag and Drop Dashboard</h1>
       <Tools
         draggable={draggable}
         resizable={resizable}
