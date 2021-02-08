@@ -1,16 +1,24 @@
 import React from "react";
 import { Card } from "@material-ui/core";
 import useStyles from "../styles";
-import RGL, { WidthProvider } from "react-grid-layout";
+import { WidthProvider, Responsive } from "react-grid-layout";
 // import AspectRatioIcon from "@material-ui/icons/AspectRatio";
 // import "react-grid-layout/css/styles.css";
 
-const ReactGridLayout = WidthProvider(RGL);
+const ReactGridLayout = WidthProvider(Responsive);
 
 const DragAndDrop = ({ draggable, resizable, compactType }) => {
   const classes = useStyles();
 
-  const layout = [
+  const layoutLG = [
+    { i: "a", x: 0, y: 0, w: 4, h: 2 },
+    { i: "b", x: 3, y: 0, w: 3, h: 2, minW: 2, maxW: 4 },
+    { i: "c", x: 6, y: 0, w: 1, h: 4 },
+    { i: "d", x: 5, y: 1, w: 2, h: 3 },
+    { i: "e", x: 1, y: 4, w: 4, h: 5, minW: 4, maxW: 6, minH: 5, maxH: 7 },
+  ];
+
+  const layoutMD = [
     { i: "a", x: 0, y: 0, w: 1, h: 2 },
     { i: "b", x: 1, y: 0, w: 3, h: 2, minW: 2, maxW: 4 },
     { i: "c", x: 4, y: 0, w: 1, h: 2 },
@@ -18,10 +26,27 @@ const DragAndDrop = ({ draggable, resizable, compactType }) => {
     { i: "e", x: 2, y: 1, w: 2, h: 2 },
   ];
 
+  const layoutSM = [
+    { i: "a", x: 0, y: 0, w: 1, h: 2 },
+    { i: "b", x: 0, y: 0, w: 3, h: 2, minW: 2, maxW: 4 },
+    { i: "c", x: 0, y: 0, w: 1, h: 2 },
+    { i: "d", x: 0, y: 0, w: 2, h: 3 },
+    { i: "e", x: 0, y: 0, w: 2, h: 2 },
+  ];
+
+  const responsiveLayouts = {
+    lg: layoutLG,
+    md: layoutMD,
+    sm: layoutSM,
+    xs: layoutSM,
+    xxs: layoutSM,
+  };
+
   return (
     <ReactGridLayout
-      layout={layout}
-      cols={12}
+      layouts={responsiveLayouts}
+      breakpoints={{ lg: 1200, md: 996, sm: 768, xs: 480, xxs: 0 }}
+      cols={{ lg: 12, md: 10, sm: 6, xs: 4, xxs: 2 }}
       rowHeight={30}
       width={1200}
       margin={[10, 10]}

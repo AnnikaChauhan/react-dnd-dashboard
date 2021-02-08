@@ -6,6 +6,7 @@ import {
   FormControl,
   FormControlLabel,
   FormLabel,
+  Button,
 } from "@material-ui/core";
 
 const Tools = ({
@@ -68,6 +69,11 @@ const Tools = ({
             </RadioGroup>
           </FormControl>
         </p>
+        {/* <p>
+          <Button variant="contained" color="primary">
+            Save Layout
+          </Button>
+        </p> */}
       </div>
     </div>
   );
