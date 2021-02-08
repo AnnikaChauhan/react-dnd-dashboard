@@ -3,7 +3,7 @@ import { Card } from "@material-ui/core";
 import useStyles from "../styles";
 import RGL, { WidthProvider } from "react-grid-layout";
 // import AspectRatioIcon from "@material-ui/icons/AspectRatio";
-import "react-grid-layout/css/styles.css";
+// import "react-grid-layout/css/styles.css";
 
 const ReactGridLayout = WidthProvider(RGL);
 
