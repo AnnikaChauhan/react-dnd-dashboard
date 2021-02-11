@@ -8,8 +8,9 @@ This project is to test out the drag and drop library: https://github.com/STRML/
 
 ## Requirements
 
-- Must be able to disable drag and drop
-
-## Additional Notes of things to try
-
-- Make it responsive
+- Must be able to use and disable drag and drop
+- Must be able to use and disable resizable
+- Different compact types available
+- Saveable
+- Can be used with our own custom components (e.g. MUI)
+- Responsive
